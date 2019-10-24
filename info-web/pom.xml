@@ -39,10 +39,6 @@
             <groupId>edu.nf</groupId>
             <artifactId>webmvc</artifactId>
         </dependency>
-        <dependency>
-            <groupId>edu.nf</groupId>
-            <artifactId>info-factory</artifactId>
-        </dependency>
 
     </dependencies>
 
