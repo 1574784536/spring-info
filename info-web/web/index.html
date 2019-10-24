@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+
+</head>
+<body>
+<table id="tab">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>sex</th>
+        <th>address</th>
+        <th>phone</th>
+    </tr>
+</table>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script>
+        $(function(){
+            $.ajax({
+                url:'listUsers',
+                method:'get',
+                success:function(result){
+                    if(result.code==200){
+                        $.each(result.data,function(index,obj){
+                            $('#tab').append(
+                                '<tr>'
+                                +'<td>'+obj.uid+'</td>'
+                                +'<td>'+obj.userName+'</td>'
+                                +'<td>'+obj.sex+'</td>'
+                                +'<td>'+obj.address+'</td>'
+                                +'<td>'+obj.phone+'</td>'
+                                +'</tr>'
+                            );
+                        });
+                    }else{
+                        alert(result.message);
+                    }
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
